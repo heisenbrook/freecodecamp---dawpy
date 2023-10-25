@@ -31,7 +31,7 @@ def draw_bar_plot():
     df_bar = df.copy()
     df_bar['Years'] = df_bar.index.year
     df_bar['Months'] = df_bar.index.month_name()
-    df_bar = df_bar.groupby(['Years','Months'], sort=False)['value'].mean().round().astype(int)
+    df_bar = df_bar.groupby(['Years','Months'], sort=False)['value'].mean().round(0)
     df_bar = df_bar.reset_index()
     missing_data = {
         'Years': [2016, 2016, 2016, 2016],
